@@ -1,0 +1,87 @@
+body {
+  background-color: rgb(222, 219, 219);
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 10rem auto;
+}
+
+.card-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transform-style: preserve-3d;
+  height: 400px;
+  width: 700px;
+  transition: 150ms;
+  cursor: pointer;
+  transform: perspective(1000px);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front-container,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+}
+
+.card .front-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+
+.card .front-container div:last-of-type {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.next-btn {
+  all: unset;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.next-btn:hover {
+  transform: translateY(3px);
+}
+
+.continent {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1rem;
+}
